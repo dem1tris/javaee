@@ -32,7 +32,7 @@ public class DatabaseContext implements AutoCloseable {
 //                    "              AND    tablename  = 'nodes') THEN\n" +
 //                    "      RAISE NOTICE 'Table public.nodes already exists.';\n" +
 //                    "   ELSE\n" +
-                    "DROP TABLE IF EXISTS nodes;\n" +
+                    "DROP TABLE IF EXISTS nodes CASCADE;\n" +
                     "CREATE TABLE nodes(" +
                     "id bigint primary key," +
                     "lon numeric," +
@@ -53,7 +53,7 @@ public class DatabaseContext implements AutoCloseable {
 //                    "              AND    tablename  = 'tags') THEN\n" +
 //                    "      RAISE NOTICE 'Table public.tags already exists.';\n" +
 //                    "   ELSE\n" +
-                    "DROP TABLE IF EXISTS tags;\n" +
+                    "DROP TABLE IF EXISTS tags CASCADE;\n" +
                     "CREATE TABLE tags(" +
                     "id serial primary key," +
                     "key varchar," +
